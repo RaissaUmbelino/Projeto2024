@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <%- include("../partials/cabecalhoSemMenu.ejs") %>
+</head>
+<body>
+    
+    <div class="container">
+    <%if(sucesso == "1"){%>
+        <div class="alert alert-danger alert-dismissible">
+            <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+            Login e/ou senha <b>incorretos.</b>
+            </div>
+
+    <% } %>
+    
+       <h1>LOGIN USUARIO</h1>
+    <form action="/usuarios/login" method="post">
+
+
+        <div>
+            <label class="form-label">Email</label>
+            <input type= "text" class="form-control" name= "email" required>
+        </div> 
+
+        <div>
+            <label class="form-label">Senha</label>
+            <input type= "text" class="form-control" name= "senha" required>
+
+        </div>
+        
+        <div>
+            <input type="submit" value="Logar" class="btn btn-sucess">
+        </div>
+
+        
+        </form>
+        <a href="/usuarios/cadastrar">Já possui conta?</a>
+
+        <%- include("../partials/rodape.ejs") %>
+
+    </div>
+
+</body>
+</html>
